@@ -1,0 +1,82 @@
+  <style>
+    select {
+      height: 36px;
+      width: 195px;
+  }
+  .container {
+    border: 1px solid;
+    padding: 10px 10px 10px;
+    width: 500px
+  }
+  </style>
+  <div class="container" >
+
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-4 col-form-label">Score</label>
+        <div class="row-sm-5">
+            <select class="hideLabel form-control" (change)="onSelectOfPossibility()" #possibleRuns>
+            <option selected="">Select Run/Wicket</option>
+            <option>0</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>6</option>
+            <option>Wicket</option>
+            </select>
+        </div>
+          
+          <div class="wkt" *ngIf="showWicket">
+            <label  class="col-sm-4 col-form-label" for="">Wicket</label>
+            
+                <select class="hideLabel from-control"  #Wicket [disabled]="btnDisable" (change)="onSelectOfWicket()">
+                  <option selected="">Selected Wicket</option>
+                  <option>RunOut</option>
+                  <option>Stumping</option>
+                  <option>LBW</option>
+                  <option>Hit the ball twice</option>
+                  <option>Bowled</option>
+                  <option>Hit wicket</option>
+                  <option>Handling the ball</option>
+                  <option>Retired</option>
+                  <option>Timed out</option>
+                  <option>Catch</option>
+                 </select>
+           <div class="wkt" *ngIf="showCatchBy">
+            <label  class="col-sm-4 col-form-label" for="">Catch</label>
+                
+                <select class="hideLabel from-control"  #Catch [disabled]="btnDisable" (change)="onSelectOfCatch()">
+                    <option selected="">Selected Baller</option>
+                    <option>{{player1}}</option>
+                  
+                </select>
+           </div>
+        
+     </div>    
+
+     
+     <div class="form-group">
+        <label for="formGroupExampleInput2" class="col-sm-4 col-form-label">Balls</label>
+        <input class="row-sm-5" type="text" class="form-control" id="formGroupExampleInput2" placeholder="Balls" name="ball" #Ball [(ngModel)] = "ball">
+     </div>
+     <br><br><br>
+
+        <div class="form-group">
+         <label for="formGroupExampleInput2" class="col-sm-4 col-form-label">Overs</label>
+         <div class="row-sm-5">
+         <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Overs" name="Overs" [(ngModel)] = "over">
+        </div>
+        </div>
+        
+        <div class="form-group">
+        <label for="formGroupExampleInput2" class="col-sm-4 col-form-label">Commentry</label>
+        <div class="row-sm-5">
+        <textarea class="form-control" id="formGroupExampleInput2" placeholder="Description"></textarea>
+        </div>
+        </div>
+        <button type="button" class="btn btn-success my-2 " (click)="onAddScoreClick()">Add Score</button>
+</div>
+        
+
+  
+

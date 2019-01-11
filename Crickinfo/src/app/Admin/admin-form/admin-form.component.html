@@ -1,0 +1,50 @@
+
+  
+  <div class="container my-4">
+  <div class="form-group row ">
+  <label for="colFormLabel" class="col-sm-2 col-form-label">Team 1</label>
+  <div class="col-auto my-1">
+  <input type="text" class="form-control" id="inputTeam1 "(blur)="myfun()" #team1>
+  </div>
+  </div>
+  <div class="form-group row ">
+  <label for="colFormLabel" class="col-sm-2 col-form-label">Team 2</label>
+  <div class="col-auto my-1">
+  <input type="text" class="form-control" id="inputTeam2" (blur)="myfun()" #team2>
+  </div>
+  </div>
+  <div class="form-group row ">
+  <label for="colFormLabel" class="col-sm-2 col-form-label">Toss</label>
+  <div class="col-auto my-1">
+  <select class="form-control" id="toss" #toss>
+  <option>{{t1}}</option>
+  <option>{{t2}}</option>
+  </select>
+  </div>
+  </div>
+  <div class="form-group row ">
+  <label for="colFormLabel" class="col-sm-2 col-form-label">Decision</label>
+  <div class="row-sm-5">
+  <select class="form-control" id="toss" #decision>
+  <option>Balling</option>
+  <option>Batting</option>
+  </select>
+  </div>
+  </div>
+  <div class="form-group row ">
+  <label for="colFormLabel" class="col-sm-2 col-form-label">Date</label>
+  <div class="col-auto my-1">
+  <input type="date" class="form-control" id="inputDate" #date>
+  </div>
+  </div>
+  <div class="form-group row ">
+  <label for="colFormLabel" class="col-sm-2 col-form-label">Overs</label>
+  <div class="col-auto my-1">
+  <input type="text" class="form-control" id="inputOvers" #overs>
+  </div>
+  </div>
+  <button type="button" class=" btn btn-primary" (click)="onDefineButtonClicked()">Define Team</button>
+  <div class="col">
+  <router-outlet></router-outlet>
+  </div>
+  </div>
